@@ -1,0 +1,43 @@
+1 to create new database
+CREATE DATABASE crimsons;
+
+to show all database
+SHOW DATABASES;
+
+to use particular database
+USE crimsons;
+
+
+to create new table 
+USE crimsons;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+to insert username and password in users table 
+INSERT INTO users (username, password) VALUES ('suryamani', 'surya123');  
+
+
+difference between turncate and delete
+
+*daelete 
+DELETE is a Data Manipulation Language (DML) command.
+It is used to remove rows from a table based on a specified condition.
+It generates individual row deletions, meaning each row that satisfies the condition is deleted one at a time.
+DELETE is slower than TRUNCATE because it generates more overhead by logging individual row deletions and potentially firing triggers associated with deletion.
+DELETE FROM table_name WHERE condition;
+
+
+*truncate
+TRUNCATE is a Data Definition Language (DDL) command.
+It is used to remove all rows from a table.
+It deallocates the data pages used to store the table's data and releases the associated storage space.
+
+
+TRUNCATE TABLE table_name;
+
+TRUNCATE TABLE crimsons.blog
